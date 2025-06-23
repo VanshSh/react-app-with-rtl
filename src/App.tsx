@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
-import FilterBar from './components/FilterBar'
-import SearchBar from './components/SearchBar'
-import TaskForm from './components/TaskForm'
-import TaskList from './components/TaskList'
+import FilterBar from './components/FilterBar/FilterBar'
+import SearchBar from './components/SearchBar/SearchBar'
+import TaskForm from './components/TaskForm/TaskForm'
+import TaskList from './components/TaskList/TaskList'
 import { useTasks } from './hooks/useTasks'
 
 const App: React.FC = () => {
