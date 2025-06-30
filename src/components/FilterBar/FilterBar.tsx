@@ -1,5 +1,5 @@
 import React from 'react'
-import type { FilterType } from '../hooks/useTasks'
+import type { FilterType } from '../../hooks/useTasks'
 
 interface Props {
   filter: FilterType

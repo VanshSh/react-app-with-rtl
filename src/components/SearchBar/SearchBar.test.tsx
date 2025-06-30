@@ -20,8 +20,9 @@ describe('SearchBar', () => {
     const { input } = setup('hello', setSearch)
     fireEvent.change(input, { target: { value: 'new value' } })
   })
-  test.only('shows the values from props', () => {
+  test('shows the values from props', () => {
     const { input } = setup('hello')
+    // screen.debug() // This will log the current state of the DOM
     expect(input).toHaveValue('hello')
   })
 

@@ -38,33 +38,15 @@ npm run test
 ### 4. Run Vitest UI (Interactive Test Runner)
 
 ```sh
-npx vitest --ui --watch
+npm run test:ui
 ```
 Open the provided local URL in your browser to access the Vitest UI.
 
 ---
 
-## 🧪 Why Vitest over Jest?
-
-- **Speed:** Vitest is much faster, especially in Vite projects, leveraging native ES modules and HMR.
-- **Native ESM support:** Works seamlessly with ES modules (default in Vite).
-- **Vite integration:** Shares config/plugins with Vite for consistent dev/test environments.
-- **Modern features:** Jest-like API, built-in TypeScript support, and first-class modern frontend workflow support.
-
----
-
-## 🖥️ Vitest UI Highlights
-
-- **Interactive Test Runner:** Web-based interface to view, run, and debug tests.
-- **Live Updates:** Tests re-run and update in real time as you code.
-- **Easy Debugging:** Filter, re-run, and inspect test results in the browser.
-- **Visual Feedback:** Instantly see which tests pass/fail and drill into errors.
-
----
-
 ## 📝 About the App
 
-This is a simple task management app demonstrating:
+This is a simple Task Management app to practice writing test cases and then add features to the app.
 
 - Component-driven development
 - Custom hooks for state management
@@ -108,21 +90,19 @@ This is a simple task management app demonstrating:
 
 ## 🧑‍💻 Common RTL & Vitest APIs
 
-| Purpose               | API/Method(s)                                                                             |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| Render a component    | `render`, `screen.debug`                                                                  |
-| Query elements        | `getByText`, `getByRole`, `getByLabelText`, `getByPlaceholderText`, `findBy`              |
-| User interactions     | `fireEvent`, `userEvent`                                                                  |
-| Assertions            | `expect(...).toBeInTheDocument()`, `toHaveTextContent`, `toHaveValue`, `assert`, `expect` |
-| Async behavior        | `waitFor`, `findBy...`, `async/await`                                                     |
-| Mocking functions     | `vi.fn`, `jest.fn` (Vitest/Jest utilities)                                                |
-| Accessibility checks  | Prefer queries like `getByRole`, `getByLabelText`                                         |
-| Testing custom hooks  | `renderHook` (from `@testing-library/react-hooks`)                                        |
-| Edge/error states     | Test error messages, empty states, etc.                                                   |
-| Run/skip tests/suites | `test.only`, `test.skip`, `describe.only`, `describe.skip`                                |
-| Debugging             | `screen.debug()`                                                                          |
-
-
+| Purpose               | API/Method(s)                                                                             | Used In Files                         |
+| --------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- |
+| Render a component    | `render`, `screen.debug`                                                                  | TaskList.test.tsx, TaskForm.test.tsx  |
+| Query elements        | `getByText`, `getByRole`, `getByLabelText`, `getByPlaceholderText`, `findBy`              | FilterBar.test.tsx, TaskList.test.tsx |
+| User interactions     | `fireEvent`, `userEvent`                                                                  | TaskForm.test.tsx, TaskItem.test.tsx  |
+| Assertions            | `expect(...).toBeInTheDocument()`, `toHaveTextContent`, `toHaveValue`, `assert`, `expect` | TaskItem.test.tsx, FilterBar.test.tsx |
+| Async behavior        | `waitFor`, `findBy...`, `async/await`                                                     | TaskForm.test.tsx, TaskList.test.tsx  |
+| Mocking functions     | `vi.fn`, `jest.fn` (Vitest/Jest utilities)                                                | useTasks.test.tsx                     |
+| Accessibility checks  | Prefer queries like `getByRole`, `getByLabelText`                                         | FilterBar.test.tsx, TaskItem.test.tsx |
+| Testing custom hooks  | `renderHook` (from `@testing-library/react-hooks`)                                        | useTasks.test.tsx                     |
+| Edge/error states     | Test error messages, empty states, etc.                                                   | useTasks.test.tsx, TaskForm.test.tsx  |
+| Run/skip tests/suites | `test.only`, `test.skip`, `describe.only`, `describe.skip`                                | TaskList.test.tsx                     |
+| Debugging             | `screen.debug()`                                                                          | TaskList.test.tsx, FilterBar.test.tsx |
 
 ---
 
@@ -133,6 +113,24 @@ To check code coverage:
 ```sh
 npm run test:coverage
 ```
+
+---
+
+## 🖥️ Vitest UI Highlights
+
+- **Interactive Test Runner:** Web-based interface to view, run, and debug tests.
+- **Live Updates:** Tests re-run and update in real time as you code.
+- **Easy Debugging:** Filter, re-run, and inspect test results in the browser.
+- **Visual Feedback:** Instantly see which tests pass/fail and drill into errors.
+
+---
+
+## 🧪 Why Vitest over Jest?
+
+- **Speed:** Vitest is much faster, especially in Vite projects, leveraging native ES modules and HMR.
+- **Native ESM support:** Works seamlessly with ES modules (default in Vite).
+- **Vite integration:** Shares config/plugins with Vite for consistent dev/test environments.
+- **Modern features:** Jest-like API, built-in TypeScript support, and first-class modern frontend workflow support.
 
 ---
 
