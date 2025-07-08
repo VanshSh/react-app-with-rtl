@@ -64,20 +64,27 @@ This is a simple Task Management app to practice writing test cases and then add
 - **Arrange-Act-Assert:** Structure each test for clarity.
 - **RTL queries:** Prefer queries that resemble user interactions (e.g., `getByRole`, `getByPlaceholderText`).
 
+---
+
 ### What to Cover
 
 - **Rendering:** Does the component render without crashing?
 - **Props:** Are props displayed/used correctly?
+- **States:** Test component rendering based on different states (e.g., loading, error).
 - **User Interaction:** Are callbacks called with correct values?
 - **Accessibility:** Is the component accessible (labels, roles, etc.)?
 - **Edge Cases:** How does the component handle empty values, errors, or special cases?
+- **Flow:** Test the overall flow of user interactions, such as adding tasks, filtering, and deleting.
 
-### What to Consider
+---
 
-- Test behavior, not implementation details.
-- Test from the user’s perspective.
-- Keep tests isolated (one concern per test).
-- Use mock functions for callbacks.
+### What Not to Cover
+
+- Implementation details (e.g., internal state, private methods).
+- Third-party code.
+- Code that is not directly related to the user's experience (like helper functions, utility functions, etc.)
+
+---
 
 ### What to Avoid
 
@@ -85,6 +92,24 @@ This is a simple Task Management app to practice writing test cases and then add
 - Don’t rely on class names or implementation details.
 - Don’t write overly broad tests.
 - Don’t use `console.log` for debugging (use `screen.debug()`).
+
+---
+
+### RTL Queries
+
+Every test generally follows these query patterns:
+- Render the component using `render()`.
+- Find elements using queries like `getByText`, `getByRole`, `getByLabelText`, etc.
+- Assert element states using `expect` methods (e.g., `toBeInTheDocument`, `toHaveTextContent`).
+
+---
+
+### Q: What's the difference between getBy vs queryBy vs findBy?
+
+- **getBy**: Synchronous query that throws an error if the element is not found. Use when you expect the element to be present.
+- **queryBy**: Synchronous query that returns `null` if the element is not found. Use when the element may not be present and you want to avoid exceptions.
+- **findBy**: Asynchronous query that waits for the element to appear in the DOM. Use when you expect the element to appear after some delay (e.g., after an API call or state change).
+- [Detailed answer](https://www.perplexity.ai/search/what-is-difference-between-get-tCZXJT8gREO_49GqtGE8SQ)
 
 ---
 
@@ -103,6 +128,7 @@ This is a simple Task Management app to practice writing test cases and then add
 | Edge/error states     | Test error messages, empty states, etc.                                                   | useTasks.test.tsx, TaskForm.test.tsx  |
 | Run/skip tests/suites | `test.only`, `test.skip`, `describe.only`, `describe.skip`                                | TaskList.test.tsx                     |
 | Debugging             | `screen.debug()`                                                                          | TaskList.test.tsx, FilterBar.test.tsx |
+| Get elements          | `findByText`, `queryByRole`, `getByPlaceholderText`                                       | TaskItem.test.tsx, TaskForm.test.tsx  |
 
 ---
 
