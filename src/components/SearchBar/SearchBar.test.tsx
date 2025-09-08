@@ -26,14 +26,19 @@ describe('SearchBar', () => {
     expect(input).toHaveValue('hello')
   })
 
-  // --> use test.only to focus on this test <--
-  // test.only('shows the values from props', () => {
-  //   const { input } = setup('hello')
-  //   expect(input).toHaveValue('hello')
-  // })
-  // --> use test.skip to skip this test <--
-  // test.skip('shows the values from props', () => {
-  //   const { input } = setup('hello')
-  //   expect(input).toHaveValue('hello')
-  // })
+  /**
+  --> use test.only to focus on this test <--
+
+  test.only('shows the values from props', () => {
+    const { input } = setup('hello')
+    expect(input).toHaveValue('hello')
+  })
+  
+  --> use test.skip to skip this test <--
+  test.skip('shows the values from props', () => {
+    const { input } = setup('hello')
+    expect(input).toHaveValue('hello')
+  })
+
+  */
 })

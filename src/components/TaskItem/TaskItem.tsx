@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import type { Task } from '../types'
+import type { Task } from '../../types'
 
 interface Props {
   task: Task
@@ -25,6 +25,7 @@ const TaskItem: React.FC<Props> = React.memo(
         <div className='d-flex align-items-center'>
           <input
             type='checkbox'
+            name='completed'
             checked={task.completed}
             onChange={() => onToggle(task.id)}
             className='form-check-input me-2'

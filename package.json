@@ -9,8 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest --watch",
-    "test:ui": "vitest --ui --coverage --watch",
-    "test:coverage": "vitest run --coverage"
+    "test:ui": "vitest run  --ui --coverage --watch",
+    "test:coverage": "vitest run --coverage",
+    "test:specific": "vitest run --watch src/components/TaskList/TaskList.test.tsx"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
