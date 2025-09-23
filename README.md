@@ -115,20 +115,20 @@ Every test generally follows these query patterns:
 
 ## 🧑‍💻 Common RTL & Vitest APIs
 
-| Purpose               | API/Method(s)                                                                             | Used In Files                         |
-| --------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------- |
-| Render a component    | `render`, `screen.debug`                                                                  | TaskList.test.tsx, TaskForm.test.tsx  |
-| Query elements        | `getByText`, `getByRole`, `getByLabelText`, `getByPlaceholderText`, `findBy`              | FilterBar.test.tsx, TaskList.test.tsx |
-| User interactions     | `fireEvent`, `userEvent`                                                                  | TaskForm.test.tsx, TaskItem.test.tsx  |
-| Assertions            | `expect(...).toBeInTheDocument()`, `toHaveTextContent`, `toHaveValue`, `assert`, `expect` | TaskItem.test.tsx, FilterBar.test.tsx |
-| Async behavior        | `waitFor`, `findBy...`, `async/await`                                                     | TaskForm.test.tsx, TaskList.test.tsx  |
-| Mocking functions     | `vi.fn`, `jest.fn` (Vitest/Jest utilities)                                                | useTasks.test.tsx                     |
-| Accessibility checks  | Prefer queries like `getByRole`, `getByLabelText`                                         | FilterBar.test.tsx, TaskItem.test.tsx |
-| Testing custom hooks  | `renderHook` (from `@testing-library/react-hooks`)                                        | useTasks.test.tsx                     |
-| Edge/error states     | Test error messages, empty states, etc.                                                   | useTasks.test.tsx, TaskForm.test.tsx  |
-| Run/skip tests/suites | `test.only`, `test.skip`, `describe.only`, `describe.skip`                                | TaskList.test.tsx                     |
-| Debugging             | `screen.debug()`                                                                          | TaskList.test.tsx, FilterBar.test.tsx |
-| Get elements          | `findByText`, `queryByRole`, `getByPlaceholderText`                                       | TaskItem.test.tsx, TaskForm.test.tsx  |
+| Purpose               | API/Method(s)                                                                             | Used In Files                                           |
+| --------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Render a component    | `render`, `screen.debug`                                                                  | TaskList.test.tsx, TaskForm.test.tsx                    |
+| Query elements        | `getByText`, `getByRole`, `getByLabelText`, `getByPlaceholderText`, `findBy`              | FilterBar.test.tsx, TaskList.test.tsx                   |
+| User interactions     | `fireEvent`, `userEvent`                                                                  | TaskForm.test.tsx, TaskItem.test.tsx                    |
+| Assertions            | `expect(...).toBeInTheDocument()`, `toHaveTextContent`, `toHaveValue`, `assert`, `expect` | TaskItem.test.tsx, FilterBar.test.tsx                   |
+| Async behavior        | `waitFor`, `findBy...`, `async/await`                                                     | TaskForm.test.tsx, TaskList.test.tsx, useTasks.test.tsx |
+| Mocking functions     | `vi.fn`, `jest.fn` (Vitest/Jest utilities)                                                | useTasks.test.tsx                                       |
+| Accessibility checks  | Prefer queries like `getByRole`, `getByLabelText`                                         | FilterBar.test.tsx, TaskItem.test.tsx                   |
+| Testing custom hooks  | `renderHook` (from `@testing-library/react-hooks`)                                        | useTasks.test.tsx                                       |
+| Edge/error states     | Test error messages, empty states, etc.                                                   | useTasks.test.tsx, TaskForm.test.tsx                    |
+| Run/skip tests/suites | `test.only`, `test.skip`, `describe.only`, `describe.skip`                                | TaskList.test.tsx                                       |
+| Debugging             | `screen.debug()`                                                                          | TaskList.test.tsx, FilterBar.test.tsx                   |
+| Get elements          | `findByText`, `queryByRole`, `getByPlaceholderText`                                       | TaskItem.test.tsx, TaskForm.test.tsx                    |
 
 ---
 

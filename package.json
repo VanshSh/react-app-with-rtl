@@ -11,7 +11,7 @@
     "test": "vitest --watch",
     "test:ui": "vitest run  --ui --coverage --watch",
     "test:coverage": "vitest run --coverage",
-    "test:specific": "vitest run --watch src/components/TaskList/TaskList.test.tsx"
+    "test:specific": "vitest run  src/hooks/useTasks.test.tsx --watch"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",

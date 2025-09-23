@@ -12,6 +12,7 @@ export function useTasks() {
     fetch('https://dummyjson.com/todos?limit=10')
       .then((res) => res.json())
       .then((data) => setTasks(data.todos))
+      .catch(() => setTasks([]))
   }, [])
 
   const filteredTasks = useMemo(() => {
